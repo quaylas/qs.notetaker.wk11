@@ -6,11 +6,11 @@ const fs = require('fs');
 const path = require('path');
 
 // initialize local modules
-// const apiRoutes =  require('./routes/apiRoutes');
+const apiRoutes =  require('./routes/apiRoutes');
 const htmlRoutes = require ('./routes/htmlRoutes');
 
 // initialize notes data
-const { notes } = require('./db/db.json');
+const notes = fs.readFileSync(path.resolve(__dirname, './db/db.json'));
 
 // initialze express application
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // specify request paths 
-// app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 // ensure PORT is configured for either live or local environment
