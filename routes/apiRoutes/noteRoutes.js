@@ -6,17 +6,21 @@ const path = require('path');
 const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('123456789jkqwxyzJKQWXYZ', 7);
 
-const {findById, createNewNote, deleteNote} = require('../../lib/notes');
-const rawNotes = fs.readFileSync(path.resolve(__dirname, '../../db/db.json'));
-const notes = JSON.parse(rawNotes);
+const {createNewNote, deleteNote} = require('../../lib/notes');
+
 
 router.get('/notes', (req, res) => {
+    const rawNotes = fs.readFileSync(path.resolve(__dirname, '../../db/db.json'));
+    const notes = JSON.parse(rawNotes);
 
     res.json(notes);
 
 });
 
 router.post('/notes', (req, res) => {
+    const rawNotes = fs.readFileSync(path.resolve(__dirname, '../../db/db.json'));
+    const notes = JSON.parse(rawNotes);
+
     let noteId = nanoid();
     req.body.id = noteId;
 
@@ -27,8 +31,12 @@ router.post('/notes', (req, res) => {
 router.delete('/notes/:id', (req, res) => {
     const deletedNoteId = req.params.id;
 
-    const updatedNotes = deleteNote(deletedNoteId, notes);
+    let updatedNotes = fs.readFileSync(path.join(__dirname, '../../db/db.json'),'utf8');
+    updatedNotes =  JSON.parse(updatedNotes);
     
+    updatedNotes = deleteNote(deletedNoteId,updatedNotes);
+
+    fs.writeFileSync(path.join(__dirname, '../../db/db.json'), updatedNotes)
     res.json(updatedNotes);
 });
 
