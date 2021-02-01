@@ -1,1 +1,5 @@
-[]
+[{
+    "title": "Demo Note",
+    "text" : "This note is here purely for demonstration purposes",
+    "id" : "jkqwxyz"
+}]
