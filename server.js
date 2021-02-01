@@ -1,8 +1,5 @@
 // initialize imported modules
 const express = require('express');
-const { customAlphabet } = require('nanoid');
-const nanoid = customAlphabet('123456789jkqwxyzJKQWXYZ', 7);
-let newId = nanoid();
 
 // initialize built-in modules
 const fs = require('fs');
@@ -30,5 +27,5 @@ const PORT = process.env.PORT || 3001;
 
 // ============= LISTEN ============= //
 app.listen(PORT,() => {
-    console.log(`API server now on port ${PORT}! and there is an id of ${newId}`);
+    console.log(`API server now on port ${PORT}!`);
 });
