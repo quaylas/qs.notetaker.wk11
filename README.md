@@ -20,9 +20,9 @@
   * [Questions](#questions)
 
   ## Visuals
-  [createNoteGif](./util/createDemo.gif)
+  ![createNoteGif](./util/createDemo.gif)
 
-  [deleteNoteGif](./util/deleteDemo.gif)
+  ![deleteNoteGif](./util/deleteDemo.gif)
 
   ## User Story and Acceptance Criteria
 
