@@ -1,14 +1,14 @@
+// import required modules
 const  router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
-
-
 const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('123456789jkqwxyzJKQWXYZ', 7);
 
+// import locaal modules
 const {createNewNote, deleteNote} = require('../../lib/notes');
 
-
+// route to retrieve stored notes
 router.get('/notes', (req, res) => {
     const rawNotes = fs.readFileSync(path.resolve(__dirname, '../../db/db.json'));
     const notes = JSON.parse(rawNotes);
@@ -17,6 +17,7 @@ router.get('/notes', (req, res) => {
 
 });
 
+// route to create and store a new note
 router.post('/notes', (req, res) => {
     const rawNotes = fs.readFileSync(path.resolve(__dirname, '../../db/db.json'));
     const notes = JSON.parse(rawNotes);
@@ -28,6 +29,7 @@ router.post('/notes', (req, res) => {
     res.json(note);
 });
 
+// route to delete a note based on its id
 router.delete('/notes/:id', (req, res) => {
     const deletedNoteId = req.params.id;
 
