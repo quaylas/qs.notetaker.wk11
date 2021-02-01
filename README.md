@@ -7,7 +7,7 @@
   A simple express.js server designed to allow users to create, store and delete notes as needed. The application leverages Node.js, Express, path, fs, and nanoid.
 
   
-  The application is deployed live [here](https://desolate-peak-22221.herokuapp.com/notes)
+  The application is deployed live [here](https://desolate-peak-22221.herokuapp.com/notes).
 
   ## Table of Contents
 
@@ -61,11 +61,19 @@
   
   ## Installation
 
-  This application runs on Node.js and uses a number of modules to ensure it performs as expected. visit the Node.js website for download and installation instructions.  Once you've installed Node.js, clone the repository and install its dependencies by running '$npm install' in the command line. Once you've installed all dependencies, you can connect to your heroku account to create your own notes server/application (https://devcenter.heroku.com/articles/git).
+  This application runs on Node.js and uses a number of modules to ensure it performs as expected. Visit the [Node.js website](http://www.nodejs.org/download/) for download and installation instructions. 
+  
+  Once you've installed Node.js, clone the repository and install its dependencies by running 
+  ```
+  $ npm install
+  ```
+  in the command line. 
+  
+  Once you've installed all dependencies, you can connect to your Heroku account to create your own notes server/application.
 
   ## Usage
 
-  The application should be deployed via Heroku and accessed there via the appropriate URL.
+  The application should be deployed via [Heroku] (https://devcenter.heroku.com/articles/git) and accessed there via the appropriate URL.
 
   ## Contributions
 
